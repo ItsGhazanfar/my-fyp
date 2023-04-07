@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://kit.fontawesome.com/3f9cb5f871.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleAnalysis.css">
+    <title>Twitter Sentiment Analysis</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="heading">
+            <h1>Twitter Sentiment Analysis</h1>
+        </div>
+
+        <div class="table">
+            <div class="sub-heading">
+                <h2>Tweets : </h2>
+            </div>
+            <p id="table-content"></p>
+        </div>
+
+        <div class="sub-heading">
+            <h2>Graph : </h2>
+        </div>
+        <div class="plot" id="myPlot"></div> 
+
+        <footer>
+            <div class="footer-content">
+                <span>Copyright <i class="fa-regular fa-copyright"></i></span>
+                <span id="year"></span>
+                <span> Twitter Sentiment Analysis</span> <br>
+                <p><i class="fa-brands fa-github"></i><a href="https://github.com/ItsGhazanfar">ItsGhazanfar</a></p>
+            </div>
+        </footer>
+    </div>  
+
+    <script>
+
+        // The values are hard-coded for now as to design the frontend.
+        var xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var yValues = [-2.3, 5.3, 4.2, 1.2, 0.2, 7.6, 6.9, -4.9, -1.6, 4.1];
+        
+        // Display using Plotly
+        var data = [{x:xValues, y:yValues, mode:"lines"}];
+        var layout = { 
+            xaxis: {title: "Number of Tweets"},
+            yaxis: {title: "Probability of Tweets"},
+            title: "Twitter Sentiment Analysis",
+            font: {
+                family: 'arial, sans-serif',
+                size: 14,
+                color: '#000000'
+            }
+        };  
+        Plotly.newPlot("myPlot", data, layout);        
+
+        //Hard-coded tweets for and displaying them
+        var list = [["The world is so beautiful today", "Positive", "8.2"], ["Praise the Lord above", "Positive", "10.5"], ["Trump sucks", "Negative", "-9.6"]];
+        var html = '<table><tbody><th>S#</th><th>Tweet</th><th>Sentiment</th><th>Probability</th>';
+
+        list.forEach((a, b) => html += '<tr class="row"><td>' + b + '</td><td>' + a[0] + '</td><td>' + a[1] + '</td><td>' + a[2] + '</td></tr>');
+
+        html += '</tbody></table>'; 
+        document.getElementById('table-content').innerHTML = html;
+
+        //Calculating the current year for Copyright
+        var year = new Date();
+        year = year.getFullYear();
+        document.getElementById('year').innerHTML = year;
+
+    </script>
+</body>
+</html>
