@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3f9cb5f871.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static\css\styleHome.css">
+    <title>Twitter Sentiment Analysis</title>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Twitter Sentiment Analysis</h1>
+        </div>
+        <div class="search">
+            <form id="form" method="post" action="analysis">
+                <div class="search">
+                    <div class="search-bar" id="search-bar">
+                        <div class="column1">
+                            <label for="topic">Topic</label><br>
+                            <input type="text" id="topic" name="topic" placeholder="Enter Topic">
+                        </div>
+                        <div class="column2">
+                            <button class="search-button" id="search-button" type="button" onclick="checkEmptyFields()">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="limit-container">
+                        <label for="limit">Limit</label><br>
+                        <input type="number" id="limit" name="limit" min="1" placeholder="Starting from 1">
+                    </div>
+
+                    <div class="advanced-search">
+                        <button class="filter-button" id="filter-button" type="button" onclick="enableDiv()">
+                            <span class="material-symbols-outlined">
+                                filter_list
+                                </span>
+                        </button>
+                    </div>
+
+                    <div class="collapsible-content" id="collapsible-content">
+                        <div class="content-inner">
+                            <p></p>
+                            <div class="input-container">
+                                <label for="name">Account Name</label><br>
+                                <input type="text" id="name" name="name" placeholder="Enter Account Name" disabled><br>
+                            </div>
+                            <div class="input-container">
+                                <label for="name">From</label><br>
+                                <input type="date" id="from-date" name="from-date" onchange="changeFromDateFontColor()" onfocus="this.showPicker()" disabled><br>
+                            </div>
+                            <div class="input-container">
+                                <label for="name">To</label><br>
+                                <input type="date" id="to-date" name="to-date" onchange="changeToDateFontColor()" onfocus="this.showPicker()" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <span>Copyright <i class="fa-regular fa-copyright"></i></span>
+                <span id="year"></span>
+                <span> Twitter Sentiment Analysis</span> <br>
+                <p><i class="fa-brands fa-github"></i><a href="https://github.com/ItsGhazanfar">ItsGhazanfar</a></p>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        //If user enters data, then change the color and opacity of the field.
+        function changeFromDateFontColor(){
+            document.getElementById("from-date").style.color = "black";
+            document.getElementById("from-date").style.opacity = "1";
+        }
+        
+        //If user enters data, then change the color and opacity of the field.
+        function changeToDateFontColor(){
+            document.getElementById("to-date").style.color = "black";
+            document.getElementById("to-date").style.opacity = "1";
+        }
+
+        //If the filter button is clicked, enable the advanced filtering inputs
+        function enableDiv(){
+            if(document.getElementById("collapsible-content").style.opacity == "1"){
+                document.getElementById("collapsible-content").style.opacity = "0";
+            }
+            else{
+                document.getElementById("collapsible-content").style.opacity = "1";
+            }
+            document.getElementById("name").disabled = false;
+            document.getElementById("from-date").disabled = false;
+            document.getElementById("to-date").disabled = false;
+        }
+
+        //validation checks for inputs and then submitting the form
+        function checkEmptyFields(){
+            if(document.getElementById("name").value == ""){
+                document.getElementById("name").disabled = true;
+            }
+            if(document.getElementById("limit").value == ""){
+                document.getElementById("limit").disabled = true;
+            }
+            if(document.getElementById("from-date").value == ""){
+                document.getElementById("from-date").disabled = true;
+            }
+            if(document.getElementById("to-date").value == ""){
+                document.getElementById("to-date").disabled = true;
+            }
+            if(document.getElementById("topic").value == ""){
+                document.getElementById("search-bar").style.borderColor = "red";
+            }
+            else if(document.getElementById("limit").disabled == false && document.getElementById("limit").value < 1){
+                document.getElementById("limit-div").style.borderColor = "red";
+            }
+            else{
+                document.getElementById("form").submit();
+            }
+        }
+
+        //submit the form if the user presses enter
+        document.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                checkEmptyFields();
+            }
+        });
+
+        //calculating current year for the Copyright
+        var year = new Date();
+        year = year.getFullYear();
+        document.getElementById('year').innerHTML = year;
+    </script>
+</body>
+</html>
