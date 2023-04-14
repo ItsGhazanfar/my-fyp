@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3f9cb5f871.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static\css\styleAbout.css">
+    <title>Twitter Sentiment Analysis - About</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="button-container">
+                <button class="header-button" onclick="location.href='/'">HOME</button>
+                <button class="header-button" onclick="location.href='about'">ABOUT</button>
+            </div>
+        </header>
+
+        <div class="heading">
+            <h1>Twitter Sentiment Analysis</h1>
+        </div>
+        
+        <div class="about-heading">
+            <h1>About</h1>
+        </div>
+
+        <div class="about">
+            <div class="about-content">
+                <div class="content">
+                    <h2>Confusion Matrix</h2>
+                    <div class="paragraph">
+                        <p>The confusion matrix has two predictions i.e., 0 for “negative”, and 1 for “positive”. The classifier
+                            has made a total of 320,000 predictions from the dataset that has been provided, 260,735 are true
+                            predictions while 59,265 are incorrect predictions. The model has given predictions "Negative" for
+                            157,375 times, and "Positive" for 162,625 times. Whereas the actual "Negative" was 159,494 times, and 
+                            "Positive" was 160,506 times.This would allow us to conclude that the accuracy of the classifier is 81.4%, .</p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="static\img\confusion-matrix.png" alt="Confusion Matrix for Twitter Sentiment Analysis">
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="content">
+                    <h2>Classifier Report</h2>
+                    <div class="paragraph">
+                        <p>In a classifier report , <strong>Precision</strong> refers to the ratio of true positives 
+                            to all the instances the model deems positive. 
+                            <strong>Recall</strong> refers to the ratio of true positives that model has correctly identified 
+                            to all the actual instances of positives. <strong>F1-score</strong> provides a balanced measure of the
+                            classifier's performance that takes both precision and recall into account. 
+                            <strong>Support</strong> refers to the number of instances of each class in the dataset that were used to evaluate the classifier's 
+                            performance.</p>
+                        <p>Together, these metrics provide a comprehensive view of how well the model is able to identify instances of the positive class, 
+                            while also taking into account the size of the dataset and the balance between the two classes.</p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="static\img\classifier-report.png" alt="Classifier Report for Twitter Sentiment Analysis" id="classifier-report">
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="content">
+                    <h2>ROC Curve</h2>
+                    <div class="paragraph">
+                        <p>The ROC curve <strong>visualizes the trade-off between the TPR and FPR at different threshold values</strong>, and 
+                            provides a way to evaluate the classifier's performance across a range of operating points.</p>
+                        <p>The Area Under the ROC Curve (AUC) value of 0.89 suggests that the classifier 
+                            possesses great discriminatory prowess and is able to distinguish between positive and negative instances at a high degree.</p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="static\img\roc-curve.png" alt="ROC Curve for Twitter Sentiment Analysis" id="classifier-report">
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <span> Twitter Sentiment Analysis Python</span> <br>
+                <p><i class="fa-brands fa-github"></i><a href="https://github.com/ItsGhazanfar">ItsGhazanfar</a></p>
+                
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
