@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://kit.fontawesome.com/3f9cb5f871.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static\css\styleAnalysis.css">
+    <title>Twitter Sentiment Analysis - Analysis</title>
+</head>
+<body>
+    <header>
+        <div class="button-container">
+            <button class="header-button" onclick="location.href='/'">HOME</button>
+            <button class="header-button" onclick="location.href='about'">ABOUT</button>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="heading">
+            <h1>Twitter Sentiment Analysis</h1>
+        </div>
+
+        <div class="sub-heading">
+            <h2>Overview : </h2>
+        </div>
+        <div class="overview-content">
+            <p class="overview">In the <strong>{length}</strong> gathered tweets, people had a <strong>{positivePercent}%</strong> positive sentiment and a <strong>{negativePercent}%</strong> negative sentiment on the topic <strong>"{topic}"</strong>.</p>
+        </div>
+
+        <div class="sub-heading">
+            <h2>Graph : </h2>
+        </div>
+        <div class="plot" id="myPlot"></div> 
+
+        <div class="table">
+            <div class="sub-heading">
+                <h2>Tweets : </h2>
+            </div>
+
+            <p id="table-content"></p>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <span> Twitter Sentiment Analysis Python</span> <br>
+                <p><i class="fa-brands fa-github"></i><a href="https://github.com/ItsGhazanfar">ItsGhazanfar</a></p>
+            </div>
+        </footer>
+    </div>  
+
+    <script>
+        var result = {{ result|tojson|safe }};
+        var list = [];
+
+        for (let i = 0; i < result['sentiments'].length && i < result['tweets'].length; i++){
+            list.push([result['tweets'][i], result['sentiments'][i]])
+        }
+
+        // Displaying the Pie Chart
+        var countPositive = 0;
+        var countNegative = 0;
+        result['sentiments'].forEach((str) => (str === "Positive") ? countPositive += 1 : countNegative += 1);
+
+        var xArray = ["Positive", "Negative"];
+        var yArray = [countPositive, countNegative];
+
+        var layout = {title:"Twitter Sentiment Analysis"};
+
+        var data = [{labels:xArray, values:yArray, type:"pie"}];
+
+        Plotly.newPlot("myPlot", data, layout);  
+        
+        
+        //Displaying the Table
+        var html = '<table id="myTable"><thead><tr><th>S#</th><th>Tweet</th><th>Sentiment</th></tr></thead><tbody>';
+
+        list.forEach((a, b) => html += '<tr class="row"><td>' + (b+1) + '</td><td>' + a[0] + '</td><td>' + a[1] + '</td></tr>');
+
+        html += '</tbody></table>'; 
+        document.getElementById('table-content').innerHTML = html;
+
+        //Displaying Overview
+        var length = list.length;
+        var positivePercent = (countPositive / length) * 100;
+        var negativePercent = (countNegative / length) * 100;
+        var topic = result['topic'];
+
+        let paragraph = document.querySelector(".overview");
+        paragraph.innerHTML = paragraph.innerHTML.replace("{length}", length).replace("{positivePercent}", positivePercent).replace("{negativePercent}", negativePercent).replace("{topic}", topic);
+
+    </script>
+</body>
+</html>

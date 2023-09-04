@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: white;
+}
+
+header{  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    z-index: 1; 
+
+    display: flex;  
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.button-container{
+    margin-right: 55px;
+}
+
+.header-button{
+    margin-top: 30px;
+    margin-right: 10px;
+
+    width: 85px;
+    height: 42px;
+
+    border-width: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #289cec;
+
+    color: #1c6da5;
+    background-color: #d4ebfb;
+
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+.header-button:hover{
+    background-color: #bfd4e2;
+    cursor: pointer;
+}
+
+.heading{
+    text-align: center;
+    height: 350px;
+    line-height: 350px; 
+    background-image: linear-gradient(#289cec, white);
+    letter-spacing: 3px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Gloock', serif; 
+}
+
+h2{
+    font-family: 'Gloock', serif;
+    font-size: 23px; 
+    letter-spacing: 1.7px;
+    margin-left: 150px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.plot{
+    width:100%;
+    margin: auto;
+    max-width:700px;
+    border-style: solid;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    word-wrap: break-word;
+    max-width: 200px;
+}
+  
+.row:hover {
+    background-color: #d4ebfb;
+}
+
+footer{
+    margin-top: 100px;
+    width: 100%;
+    color: white;
+    background-color: #289cec;
+    text-align: center;
+    padding: 20px 0px;
+    font-family: 'Gloock', serif; 
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.footer-content{
+    height: 100px;
+    padding-top: 50px;
+}
+
+.footer-content a{
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.footer-content p{
+    margin-top: 10px;
+}
+
+.overview{
+    font-family: arial, sans-serif;
+    margin-left: 200px;
+}

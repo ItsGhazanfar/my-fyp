@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3f9cb5f871.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static\css\styleAbout.css">
+    <title>Twitter Sentiment Analysis - About</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="button-container">
+                <button class="header-button" onclick="location.href='/'">HOME</button>
+                <button class="header-button" onclick="location.href='about'">ABOUT</button>
+            </div>
+        </header>
+
+        <div class="heading">
+            <h1>Twitter Sentiment Analysis</h1>
+        </div>
+        
+        <div class="about-heading">
+            <h1>About</h1>
+        </div>
+
+        <div class="about">
+            <div class="about-content">
+                <div class="content">
+                    <h2>Confusion Matrix</h2>
+                    <div class="paragraph">
+                        <p>The confusion matrix is a matrix used to <strong>determine the performance</strong> of the classification models 
+                            for a given set of test data. The matrix is divided into two dimensions, that are the predicted values and the 
+                            actual values along with the total number of predictions. Predicted values are those values, which are predicted 
+                            by the model, and actual values are the true values for the given observations.</p>
+                        <p>The table is given for the <strong>two-class classifier</strong>, which has two predictions i.e., 
+                            <strong>0</strong> which is <strong>Negative</strong>, and <strong>1</strong> which is <strong>Positive</strong>. 
+                            The classifier has made a total of <strong>209,716</strong> predictions, <strong>180,054</strong> are true 
+                            predictions and <strong>29,662</strong> are incorrect predictions.</p>
+                        <p>The model has given predictions <strong>"Negative"</strong> for <strong>167,543</strong> times, 
+                            and <strong>"Positive"</strong> for <strong>42,173</strong>. Whereas the actual 
+                            <strong>"Negative"</strong> was <strong>160,127</strong> times, and <strong>"Positive"</strong> was 
+                            <strong>49,589</strong> times.</p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="static\img\confusion-matrix.png" alt="Confusion Matrix for Twitter Sentiment Analysis">
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="content">
+                    <h2>Classifier Report</h2>
+                    <div class="paragraph">
+                        <p>In a classifier report of a two-class classifier model, <strong>Precision</strong> refers to the proportion of true positives 
+                            (correctly identified instances of the positive class) among all instances that the model has classified as positive. 
+                            <strong>Recall</strong>, on the other hand, refers to the proportion of true positives that the model has correctly identified 
+                            among all actual instances of the positive class. <strong>F1-score</strong> is the harmonic mean of precision and recall, and 
+                            provides a balanced measure of the classifier's performance that takes both precision and recall into account. Finally, 
+                            <strong>Support</strong> refers to the number of instances of each class in the dataset that were used to evaluate the classifier's 
+                            performance.</p>
+                        <p>Together, these metrics provide a comprehensive view of how well the model is able to identify instances of the positive class, 
+                            while also taking into account the size of the dataset and the balance between the two classes.</p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="static\img\classifier-report.png" alt="Classifier Report for Twitter Sentiment Analysis" id="classifier-report">
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="content">
+                    <h2>ROC Curve</h2>
+                    <div class="paragraph">
+                        <p>The ROC curve for a Linear SVC is a plot of the true positive rate (TPR) against the false positive rate (FPR) at different 
+                            threshold settings. The TPR represents the proportion of actual positive instances that are correctly classified as 
+                            positive by the classifier, while the FPR represents the proportion of negative instances that are incorrectly classified as positive. 
+                            The ROC curve <strong>visualizes the trade-off between the TPR and FPR at different threshold values</strong>, and 
+                            provides a way to evaluate the classifier's performance across a range of operating points.</p>
+                        <p>An Area Under the Curve or AUC value of <strong>0.89</strong> suggests that the classifier has <strong>good discriminatory power</strong> 
+                            and is able to distinguish between positive and negative instances with a high degree of accuracy. 
+                            The AUC ranges from 0 to 1, where a value of 0.5 indicates that the classifier's performance is no better than random guessing, 
+                            and a value of 1 indicates perfect classification. The accuracy of <strong>0.86</strong> represents the proportion of instances 
+                            that are <strong>correctly classified by the classifier</strong>, and is just one measure of its performance.</p>
+                        <p>The ROC curve provides a more comprehensive view of the classifier's performance by taking into account both the true 
+                            positive rate and false positive rate across a range of thresholds.</p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="static\img\roc-curve.png" alt="ROC Curve for Twitter Sentiment Analysis" id="classifier-report">
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <span> Twitter Sentiment Analysis Python</span> <br>
+                <p><i class="fa-brands fa-github"></i><a href="https://github.com/ItsGhazanfar">ItsGhazanfar</a></p>
+                
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
