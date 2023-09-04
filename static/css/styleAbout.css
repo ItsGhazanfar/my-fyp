@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: white;
+}
+
+header{  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    z-index: 1; 
+
+    display: flex;  
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.button-container{
+    margin-right: 55px;
+}
+
+.header-button{
+    margin-top: 30px;
+    margin-right: 10px;
+
+    width: 85px;
+    height: 42px;
+
+    border-width: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #289cec;
+
+    color: #1c6da5;
+    background-color: #d4ebfb;
+
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+.header-button:hover{
+    background-color: #bfd4e2;
+    cursor: pointer;
+}
+
+.heading{
+    text-align: center;
+    height: 350px;
+    line-height: 350px; 
+    background-image: linear-gradient(#289cec, white);
+    letter-spacing: 3px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Gloock', serif; 
+}
+
+.about-heading h1{
+        
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: 'Gloock', serif; 
+    font-size: 34px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.about-content{
+    display: inline-block;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 400px;  
+}
+
+.content{
+    margin: 40px;
+    padding: 20px;
+    float: left;
+    width: 49%;
+    text-align: justify;
+}
+
+.content h2{
+    font-family: 'Gloock', serif; 
+    letter-spacing: 1px;
+}
+
+.paragraph{
+    margin-top: 20px;
+}
+
+.paragraph p{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 17px;;
+    margin: 10px;
+    padding: 5px;
+}
+
+.image{
+    float: left;
+    width: 40%;
+    text-align: center;
+}
+
+.image img{
+  width: 400px;
+  height: 300px;
+}
+
+#classifier-report{
+    width: 80%;
+    height: 100%;
+}
+
+footer{
+    margin-top: 100px;
+    width: 100%;
+    color: white;
+    background-color: #289cec;
+    text-align: center;
+    padding: 20px 0px;
+    font-family: 'Gloock', serif; 
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.footer-content{
+    height: 100px;
+    padding-top: 50px;
+}
+
+.footer-content a{
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.footer-content p{
+    margin-top: 10px;
+}
